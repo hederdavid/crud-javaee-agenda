@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+}
+
+img {
+	height: 20rem;
+}
+
+h1 {
+	color: #ce7132;
+}
+
+.botao-index {
+	text-decoration: none;
+	background-color: #ce7132;
+	padding: 5px 10px 5px 10px;
+	color: #ffffff;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 5px;
+	
+	
+}
