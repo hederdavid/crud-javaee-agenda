@@ -12,17 +12,37 @@ img {
 }
 
 h1 {
-	color: #ce7132;
+	color: #4682B4;
 }
 
 .botao-index {
 	text-decoration: none;
-	background-color: #ce7132;
+	background-color: #4682B4;
 	padding: 5px 10px 5px 10px;
 	color: #ffffff;
 	font-size: 1.2em;
 	font-weight: 700;
 	border-radius: 5px;
-	
-	
+	border: 0;
+	cursor: pointer;	
 }
+
+.caixa1 {
+	width: 320px;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #4682B4;
+	border-radius: 5px;
+}
+
+.caixa2 {
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #4682B4;
+	border-radius: 5px;
+}
+
+
+
+
+

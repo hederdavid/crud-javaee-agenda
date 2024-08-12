@@ -26,14 +26,14 @@ public class DAO {
     }
     
     // Teste de conexão
-    public void testeConexao() {
-        try {
-            Connection con = conectar();
-            System.out.println(con);
-            con.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
+//    public void testeConexao() {
+//        try {
+//            Connection con = conectar();
+//            System.out.println(con);
+//            con.close();
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+//    }
 
 }
