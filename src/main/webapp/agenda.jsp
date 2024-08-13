@@ -5,9 +5,6 @@
 
 <%
 	ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("contatos");
-	for (JavaBeans contato : lista) {
-		out.println(contato);
-	}
 %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -38,12 +35,15 @@
 					<td><%=contato.getNome()%></td>
 					<td><%=contato.getFone()%></td>
 					<td><%=contato.getEmail()%></td>
-					<td><a href="select?idcon=<%=contato.getIdcon() %>" class="botao-index">Editar</a></td>
+					<td>
+						<a href="select?idcon=<%=contato.getIdcon() %>" class="botao-index">Editar</a>
+						<a href="javascript: confirmar(<%=contato.getIdcon() %>)" class="botao2">Excluir</a>
+					</td>
 					
 				</tr>
 			<%} %>
 		</tbody>
 	</table>
-
+<script src="scripts/confirmador.js"></script>
 </body>
 </html>
