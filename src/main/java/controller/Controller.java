@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,20 +40,30 @@ public class Controller extends HttpServlet {
 	// Listar contatos
 	protected void contatos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		ArrayList<JavaBeans> lista = dao.listarContatos();
+		//teste
+		for (JavaBeans contato : lista) {
+			System.out.println(contato);
+		}
 		response.sendRedirect("agenda.jsp");
 	}
 	
 	// Novo contato
 	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//setar variaveis
 		System.out.println(request.getParameter("nome"));
 		System.out.println(request.getParameter("fone"));
 		System.out.println(request.getParameter("email"));
-		
-		//setar variaveis
-		contato.setFone(request.getParameter("nome"));
+		contato.setNome(request.getParameter("nome"));
 		contato.setFone(request.getParameter("fone"));
-		contato.setFone(request.getParameter("email"));
+		contato.setEmail(request.getParameter("email"));
+		// invocar o metodo inserir contato passando o contato
+		dao.inserirContato(contato);
+		//redirecionar para o documento agenda.jps
+		response.sendRedirect("main");
 	}
+	
+	
 
 }
