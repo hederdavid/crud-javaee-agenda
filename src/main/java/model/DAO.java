@@ -69,7 +69,49 @@ public class DAO {
 			System.out.println(e);
 			return null;
 		}
-  		
+  	}
+  	
+  	//Update
+  	public void selecionarContato(JavaBeans contato) {
+  		String read2 = "select * from contatos where idcon = ?";
+  		try {
+  			Connection con = conectar();
+  			PreparedStatement pst = con.prepareStatement(read2);
+  			int idcon = Integer.parseInt(contato.getIdcon());
+  		    pst.setInt(1, idcon);
+  			ResultSet rs = pst.executeQuery();
+  			System.out.println(rs);
+  			while (rs.next()) {
+  				contato.setIdcon(rs.getString(1));
+  				contato.setNome(rs.getString(2));
+  				contato.setFone(rs.getString(3));
+  				contato.setEmail(rs.getString(4));
+  			}
+  			con.close();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+  	}
+  	
+  	//editar contato
+  	public void alterarContato(JavaBeans contato) {
+  		String create = "update contatos set nome =?,fone=?,email=? where idcon=?";
+  		try {
+  			Connection con = conectar();
+  			PreparedStatement pst = con.prepareStatement(create);
+  			pst.setString(1, contato.getNome());
+  			pst.setString(2, contato.getEmail());
+  			pst.setString(3, contato.getFone());
+  			int idcon = Integer.parseInt(contato.getIdcon());
+  			pst.setInt(4, idcon);
+  			pst.executeUpdate();
+  			con.close();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+			
+		}
   		
   	}
     
